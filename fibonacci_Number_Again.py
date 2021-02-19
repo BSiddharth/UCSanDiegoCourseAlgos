@@ -14,7 +14,7 @@ def findMODeasyWay(n, m):
     return ffib(n) % m
 
 
-def findMODbestWay(n, m):
+def findMODbestWay(n, m=10):
     patternList = []
 
     f1 = 0
