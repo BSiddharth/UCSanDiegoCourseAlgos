@@ -9,3 +9,5 @@ inputList = input("Enter the list here: ")
 
 for index in len(inputList):
     pass
+
+# doesnt make any sense............

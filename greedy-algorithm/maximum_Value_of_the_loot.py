@@ -22,9 +22,9 @@ def maxVal(valueList, weightList, maxWeight):
                        for k in sorted(unorderedDataDict, reverse=True)}
     weightList = list(orderedDataDict.values())
     keyList = list(orderedDataDict.keys())
-    print(orderedDataDict)
-    print(keyList)
-    print(weightList)
+    # print(orderedDataDict)
+    # print(keyList)
+    # print(weightList)
 
     unorderedDataDict.clear()
     for x in range(len(orderedDataDict)):
