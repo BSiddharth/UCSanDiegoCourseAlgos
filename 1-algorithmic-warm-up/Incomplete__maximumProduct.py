@@ -10,4 +10,4 @@ inputList = input("Enter the list here: ")
 for index in len(inputList):
     pass
 
-# doesnt make any sense............
+# doesn't make any sense............why will I do it this way?????
