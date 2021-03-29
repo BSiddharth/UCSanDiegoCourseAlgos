@@ -1,6 +1,9 @@
 # as you can see in the example given in the course greedy algo is not always optimal so we use dynamic programming to solve the change problem
 # https://www.youtube.com/watch?v=jgiZlGzXMBw this helped.
 
+
+# 2021-03-25-09-32-32.png
+
 def dpChange(change, coins):
     coins.sort()
     minValue = coins[0]
