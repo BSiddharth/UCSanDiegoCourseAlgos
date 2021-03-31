@@ -15,10 +15,8 @@ def findEditDistance(str1, str2):
                 dynamicList[i][j] = j
             elif j == 0:
                 dynamicList[i][j] = i
-    # a, b = 1, 1
     for a in range(1, x+1):
         for b in range(1, y+1):
-            # while a <= x and b <= y:
             change = dynamicList[a-1][b-1]+1
             insertion = dynamicList[a-1][b]+1
             deletion = dynamicList[a][b-1]+1
