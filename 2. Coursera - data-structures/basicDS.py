@@ -51,35 +51,38 @@ class LinkedList:
 
 
 class Stack:
-    def __init__(self, *nodeList):
+    def __init__(self, nodeList=[]):
         self.internalLinkedList = LinkedList(nodeList)
+        self.head = self.internalLinkedList.head
         self.tail = self.internalLinkedList.tail
         self.length = self.internalLinkedList.length
 
     def push(self, node):
         self.internalLinkedList.addAtLast(node)
+        self.length = self.internalLinkedList.length
 
     def remove(self):
         self.internalLinkedList.popFromLast()
+        self.length = self.internalLinkedList.length
 
 
 if __name__ == '__main__':
 
-    linkedList = LinkedList([
+    stack = Stack([
         # Node(0),
         # Node(1),
         # Node(2),
         # Node(3),
     ])
 
-    print(linkedList.length)
-    print(linkedList.head)
-    print(linkedList.tail)
-    linkedList.addAtLast(Node(4))
-    print(linkedList.length)
-    print(linkedList.head)
-    print(linkedList.tail)
-    linkedList.popFromLast()
-    print(linkedList.length)
-    print(linkedList.head)
-    print(linkedList.tail)
+    print(stack.length)
+    print(stack.head)
+    print(stack.tail)
+    stack.push(Node(4))
+    print(stack.length)
+    print(stack.head)
+    print(stack.tail)
+    stack.remove()
+    print(stack.length)
+    print(stack.head)
+    print(stack.tail)
