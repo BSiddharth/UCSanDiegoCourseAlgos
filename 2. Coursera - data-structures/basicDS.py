@@ -59,10 +59,14 @@ class Stack:
 
     def push(self, node):
         self.internalLinkedList.addAtLast(node)
+        self.head = self.internalLinkedList.head
+        self.tail = self.internalLinkedList.tail
         self.length = self.internalLinkedList.length
 
     def remove(self):
         self.internalLinkedList.popFromLast()
+        self.head = self.internalLinkedList.head
+        self.tail = self.internalLinkedList.tail
         self.length = self.internalLinkedList.length
 
 
@@ -78,7 +82,7 @@ if __name__ == '__main__':
     print(stack.length)
     print(stack.head)
     print(stack.tail)
-    stack.push(Node(4))
+    stack.push(Node("o"))
     print(stack.length)
     print(stack.head)
     print(stack.tail)
