@@ -3,19 +3,23 @@ class Node:
         self.key = key
         self.next = None
 
+    def __str__(self):
+        return str(self.key)
+
 
 class LinkedList:
     def __init__(self, nodeList=[]):
-        if nodeList == None:
+        if len(nodeList) == 0:
             self.head = None
             self.tail = None
             self.length = 0
-        self.head = nodeList[0]
-        self.tail = nodeList[-1]
-        self.length = len(nodeList)
+        else:
+            self.head = nodeList[0]
+            self.tail = nodeList[-1]
+            self.length = len(nodeList)
         if len(nodeList) >= 1:
             for x in range(len(nodeList)):
-                if x+1 <= len(nodeList):
+                if x+1 <= len(nodeList)-1:
                     nodeList[x].next = nodeList[x+1]
                 else:
                     nodeList[x].next = None
@@ -36,6 +40,7 @@ class LinkedList:
             self.head = None
             self.tail = None
             self.length = 0
+            return
         else:
             pointer = self.head
             while pointer.next.next != None:
@@ -56,3 +61,25 @@ class Stack:
 
     def remove(self):
         self.internalLinkedList.popFromLast()
+
+
+if __name__ == '__main__':
+
+    linkedList = LinkedList([
+        # Node(0),
+        # Node(1),
+        # Node(2),
+        # Node(3),
+    ])
+
+    print(linkedList.length)
+    print(linkedList.head)
+    print(linkedList.tail)
+    linkedList.addAtLast(Node(4))
+    print(linkedList.length)
+    print(linkedList.head)
+    print(linkedList.tail)
+    linkedList.popFromLast()
+    print(linkedList.length)
+    print(linkedList.head)
+    print(linkedList.tail)
