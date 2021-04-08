@@ -1,3 +1,5 @@
+# 2021-04-08-10-38-12.png
+
 from basicDS import Stack, Node
 
 
