@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, key):
+    def __init__(self, key=0):
         self.key = key
         self.next = None
 
@@ -68,6 +68,17 @@ class Stack:
         self.head = self.internalLinkedList.head
         self.tail = self.internalLinkedList.tail
         self.length = self.internalLinkedList.length
+
+
+class TreeNode:
+    def __init__(self, value=0, children=[]):
+        self.value = value
+        self.children = children
+
+
+class Tree:
+    def __init__(self, root):
+        self.root = root
 
 
 if __name__ == '__main__':
