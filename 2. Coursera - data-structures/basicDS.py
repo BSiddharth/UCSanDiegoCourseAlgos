@@ -7,6 +7,16 @@ class Node:
         return str(self.key)
 
 
+class DoubleNode:
+    def __init__(self, key=0):
+        self.key = key
+        self.next = None
+        self.prev = None
+
+    def __str__(self):
+        return str(self.key)
+
+
 class LinkedList:
     def __init__(self, nodeList=[]):
         if len(nodeList) == 0:
@@ -79,6 +89,33 @@ class TreeNode:
 class Tree:
     def __init__(self, root):
         self.root = root
+
+
+class Queue:
+    def __init__(self, first):
+        self.first = first
+        self.last = first
+        self.length = 1
+
+    def addAtLast(self, dNode):
+        if self.length == 0:
+            self.first = dNode
+            self.last = dNode
+        else:
+            dNode.next = self.last
+            self.last.prev = dNode
+            self.last = dNode
+        self.length += 1
+
+    def popFirst(self):
+        self.first = self.first.prev
+        if self.length > 1:
+            self.first.next.prev = None
+            self.first.next = None
+        else:
+            self.last = None
+
+        self.length -= 1
 
 
 if __name__ == '__main__':
