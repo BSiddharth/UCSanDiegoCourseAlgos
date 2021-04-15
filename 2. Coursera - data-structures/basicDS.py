@@ -20,6 +20,32 @@ class DoubleNode:
         return str(self.key)
 
 
+class DoubleLinkedList:
+    def __init__(self, dNode):
+        self.head = dNode
+        self.tail = dNode
+
+    def addAtEnd(self, dNode):
+        if self.head == None:
+            self.head = dNode
+            self.tail = dNode
+        else:
+            self.tail.next = dNode
+            dNode.prev = self.tail
+            self.tail = dNode
+        print('added')
+
+    def removeFromEnd(self):
+        assert self.head != None, "Can't remove element from an empty list"
+        if self.head.next == None:
+            self.head = None
+            self.tail = None
+        else:
+            self.tail = self.tail.prev
+            self.tail.next = None
+        print('removed')
+
+
 class LinkedList:
     def __init__(self, nodeList=[]):
         if len(nodeList) == 0:
