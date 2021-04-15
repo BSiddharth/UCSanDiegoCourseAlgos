@@ -2,6 +2,14 @@
 from basicDS import DoubleNode, DoubleLinkedList
 
 
+def maxSlidingWindow(l, w):
+    n = len(l)
+    dLinkedList = DoubleLinkedList(l[0])
+    for x in range(1, w):
+        dNode = DoubleNode(l[x])
+        # dLinkedList.addAtLast()
+
+
 if __name__ == '__main__':
     dlist = DoubleLinkedList(DoubleNode(1))
     dlist.addAtEnd(DoubleNode(2))

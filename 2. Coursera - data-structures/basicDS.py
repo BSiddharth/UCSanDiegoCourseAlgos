@@ -19,6 +19,9 @@ class DoubleNode:
     def __str__(self):
         return str(self.key)
 
+    def __gt__(self, other):
+        return self.key > other.key
+
 
 class DoubleLinkedList:
     def __init__(self, dNode):
@@ -33,7 +36,6 @@ class DoubleLinkedList:
             self.tail.next = dNode
             dNode.prev = self.tail
             self.tail = dNode
-        print('added')
 
     def removeFromEnd(self):
         assert self.head != None, "Can't remove element from an empty list"
@@ -43,7 +45,16 @@ class DoubleLinkedList:
         else:
             self.tail = self.tail.prev
             self.tail.next = None
-        print('removed')
+
+    def printList(self):
+        node = self.head
+        if node == None:
+            print('empty list')
+        else:
+            while node != None:
+                print(node, end=" ")
+                node = node.next
+            print()
 
 
 class LinkedList:
@@ -148,22 +159,27 @@ class Queue:
 
 
 if __name__ == '__main__':
+    d = DoubleLinkedList(DoubleNode(1))
+    d.addAtEnd(DoubleNode(2))
+    d.addAtEnd(DoubleNode(5))
+    d.addAtEnd(DoubleNode(8))
+    d.addAtEnd(DoubleNode(6))
+    d.printList()
+    # stack = Stack([
+    #     # Node(0),
+    #     # Node(1),
+    #     # Node(2),
+    #     # Node(3),
+    # ])
 
-    stack = Stack([
-        # Node(0),
-        # Node(1),
-        # Node(2),
-        # Node(3),
-    ])
-
-    print(stack.length)
-    print(stack.head)
-    print(stack.tail)
-    stack.push(Node("o"))
-    print(stack.length)
-    print(stack.head)
-    print(stack.tail)
-    stack.remove()
-    print(stack.length)
-    print(stack.head)
-    print(stack.tail)
+    # print(stack.length)
+    # print(stack.head)
+    # print(stack.tail)
+    # stack.push(Node("o"))
+    # print(stack.length)
+    # print(stack.head)
+    # print(stack.tail)
+    # stack.remove()
+    # print(stack.length)
+    # print(stack.head)
+    # print(stack.tail)
