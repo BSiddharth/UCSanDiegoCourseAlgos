@@ -6,6 +6,9 @@ class Node:
     def __str__(self):
         return str(self.key)
 
+    def __gt__(self, other):
+        return self.key > other.key
+
 
 class DoubleNode:
     def __init__(self, key=0):
@@ -46,7 +49,7 @@ class LinkedList:
 
     def popFromLast(self):
 
-        if self.head.next == None:
+        if self.head.next == None or self.head == None:
             self.head = None
             self.tail = None
             self.length = 0
@@ -80,15 +83,15 @@ class Stack:
         self.length = self.internalLinkedList.length
 
 
-class TreeNode:
-    def __init__(self, value=0, children=[]):
-        self.value = value
-        self.children = children
+# class TreeNode:
+#     def __init__(self, value=0, children=[]):
+#         self.value = value
+#         self.children = children
 
 
-class Tree:
-    def __init__(self, root):
-        self.root = root
+# class Tree:
+#     def __init__(self, root):
+#         self.root = root
 
 
 class Queue:
