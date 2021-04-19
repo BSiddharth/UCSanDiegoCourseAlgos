@@ -27,6 +27,7 @@ class DoubleLinkedList:
     def __init__(self, dNode):
         self.head = dNode
         self.tail = dNode
+        self.length = 1
 
     def addAtEnd(self, dNode):
         if self.head == None:
@@ -36,6 +37,7 @@ class DoubleLinkedList:
             self.tail.next = dNode
             dNode.prev = self.tail
             self.tail = dNode
+        self.length += 1
 
     def removeFromEnd(self):
         assert self.head != None, "Can't remove element from an empty list"
@@ -45,6 +47,23 @@ class DoubleLinkedList:
         else:
             self.tail = self.tail.prev
             self.tail.next = None
+        self.length -= 1
+
+    def removeFromStart(self):
+        assert self.head != None, "Can't remove element from an empty list"
+        self.head = self.head.next
+        # self.tail = self.tail.prev
+        self.length -= 1
+
+    def addAtStart(self, dNode):
+        if self.head == None:
+            self.head = dNode
+            self.tail = dNode
+        else:
+            self.head.prev = dNode
+            dNode.next = self.head
+            self.head = dNode
+        self.length += 1
 
     def printList(self):
         node = self.head
