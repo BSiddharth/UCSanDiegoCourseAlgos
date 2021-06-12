@@ -8,16 +8,15 @@ def findSCCHelper(x, lowLinkList, visitedList, pathList, graphEdgeList, scclist)
     pathList.append(x)
     for y in graphEdgeList[x]:
         # print('checking nebur', y, 'of', x)
-        if visitedList[y] == True:
-            if y in pathList:
-                # print(y, 'was visited and in path from', x)
-                lowLinkList[x] = min(lowLinkList[x], lowLinkList[y])
-                # print('setting the low link of ', x, 'as', lowLinkList[x])
-            else:
-                pass
-                # print(y, 'was visited but not in path')
+        if visitedList[y] == True and y in pathList:
 
-        else:
+            # print(y, 'was visited and in path from', x)
+            lowLinkList[x] = min(lowLinkList[x], lowLinkList[y])
+            # print('setting the low link of ', x, 'as', lowLinkList[x])
+
+            # print(y, 'was visited but not in path')
+
+        elif visitedList[y] == False:
             # print(y, 'was not visited')
             findSCCHelper(y, lowLinkList, visitedList,
                           pathList, graphEdgeList, scclist)
