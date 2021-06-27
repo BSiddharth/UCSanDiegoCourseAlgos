@@ -4,7 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pqdict = "==0.1"
+autopep8 = "*"
+pqdict = "*"
 
 [dev-packages]
 

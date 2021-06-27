@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e9fd086da301f83a6ab95f99b917a1a5feb2b886ad916c518eebbd2498d4e87c"
+            "sha256": "864be071e5ac006f46217e4667ef796319081201b0d37edf212a54147ee2326f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,12 +16,45 @@
         ]
     },
     "default": {
-        "pqdict": {
+        "autopep8": {
             "hashes": [
-                "sha256:2ce291e4731c9f681180f14680d473a0d8530b5aaaf6c25cea9242e1fb72dcad"
+                "sha256:276ced7e9e3cb22e5d7c14748384a5cf5d9002257c0ed50c0e075b68011bb6d0",
+                "sha256:aa213493c30dcdac99537249ee65b24af0b2c29f2e83cd8b3f68760441ed0db9"
             ],
             "index": "pypi",
-            "version": "==0.1"
+            "version": "==1.5.7"
+        },
+        "pqdict": {
+            "hashes": [
+                "sha256:87a51802a77c3dd825332b10a9db95f6882bc26cddf853265536c30d5c322e23",
+                "sha256:bdd17df2bbf6c48a444d335fcf6eb8635830ad122f6d8d21a609a1f060659603"
+            ],
+            "index": "pypi",
+            "version": "==1.1.1"
+        },
+        "pycodestyle": {
+            "hashes": [
+                "sha256:514f76d918fcc0b55c6680472f0a37970994e07bbb80725808c17089be302068",
+                "sha256:c389c1d06bf7904078ca03399a4816f974a1d590090fecea0c63ec26ebaf1cef"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==2.7.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+                "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==1.16.0"
+        },
+        "toml": {
+            "hashes": [
+                "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b",
+                "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+            ],
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==0.10.2"
         }
     },
     "develop": {}
