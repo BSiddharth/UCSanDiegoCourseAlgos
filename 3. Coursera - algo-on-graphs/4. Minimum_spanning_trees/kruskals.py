@@ -28,7 +28,7 @@ def kruskals(totalVertices, graph):
     parentList = [x for x in range(totalVertices)]
     rankList = [0 for x in range(totalVertices)]
 
-    msp = []
+    mst = []
 
     # numOfEdgesFormed = 0
     # while numOfEdgesFormed < totalVertices - 1:
@@ -36,11 +36,11 @@ def kruskals(totalVertices, graph):
         if find(parentList, x) != find(parentList, y):
             union(rankList, parentList, x, y)
             # numOfEdgesFormed += 1
-            msp.append([x, y, weight])
+            mst.append([x, y, weight])
     totalWeight = 0
-    for x, y, weight in msp:
+    for x, y, weight in mst:
         totalWeight += weight
-    print('Minimum spanning tree is', msp, 'and total weight is', totalWeight)
+    print('Minimum spanning tree is', mst, 'and total weight is', totalWeight)
 
 
 if __name__ == '__main__':
