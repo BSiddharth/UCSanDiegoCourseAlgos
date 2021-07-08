@@ -2,7 +2,6 @@ class Node:
     def __init__(self, val='root') -> None:
         self.children = [None for x in range(26)]
         self.isEndOfWord = False
-        self.val = val
 
 
 class Trie:
@@ -17,7 +16,7 @@ class Trie:
         for alphabet in word:
             index = self._charToIndex(alphabet)
             if not currentNode.children[index]:
-                currentNode.children[index] = Node(alphabet)
+                currentNode.children[index] = Node()
             currentNode = currentNode.children[index]
         currentNode.isEndOfWord = True
 
@@ -25,24 +24,55 @@ class Trie:
         for word in wordsList:
             self.add(word)
 
-    def _printTrieHelper(self, currentNode, currentString):
-        if currentNode.val != 'root':
-            currentString += currentNode.val
-
+    def _printTrieHelper(self, currentNode, currentString, currentIndex):
+        # if currentNode.val != 'root':
+        #     currentString += currentNode.val
+        if currentNode != self.root:
+            currentString += chr(ord('a')+currentIndex)
         if currentNode.isEndOfWord:
             print(currentString)
             return
-        for word in currentNode.children:
-            if word:
-                self._printTrieHelper(word, currentString)
+        for index in range(len(currentNode.children)):
+            if currentNode.children[index]:
+                self._printTrieHelper(
+                    currentNode.children[index], currentString, index)
 
     def printTrie(self):
         currentString = ''
         currentNode = self.root
-        self._printTrieHelper(currentNode, currentString)
+        self._printTrieHelper(currentNode, currentString, 0)
+
+    def find(self, string):
+        currentIndex = 0
+        currentNode = self.root
+        while currentIndex != len(string):
+            if not currentNode.children[self._charToIndex(string[currentIndex])]:
+                print(False)
+                return False
+            else:
+                currentNode = currentNode.children[self._charToIndex(
+                    string[currentIndex])]
+                currentIndex += 1
+        if currentNode.isEndOfWord:
+            print(True)
+            return True
+        print(False)
+        return False
+
+    def trieMatching(self, string):
+        startIndex = 0
+        while startIndex < len(string):
+            for endIndex in range(len(string[startIndex:])):
+                isPresent = self.find(string[startIndex:startIndex+endIndex])
+                if isPresent:
+                    print(string[startIndex:startIndex+endIndex], 'is present')
+
+            startIndex += 1
 
 
 if __name__ == '__main__':
     trie = Trie()
-    trie.addList(['ataga', 'atc', 'gat'])
+    trie.addList(['atcg', 'gggt'])
     trie.printTrie()
+    trie.find('gg')
+    trie.trieMatching('aatcgggttcaatcggggt')
